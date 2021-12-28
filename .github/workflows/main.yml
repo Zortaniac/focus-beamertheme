@@ -1,0 +1,28 @@
+name: 
+
+on:
+  push:
+    branches: [ master, action ]
+
+  workflow_dispatch:
+
+jobs:
+  create_asset:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: release
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: beamertheme-focus
+          path: |
+            **/*
+            !**/*.git*
